@@ -1,0 +1,92 @@
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Peminjaman Barang</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+     
+    <div class="header">
+        <img src="logo.png" alt="Logo Kominfo" class="logo">
+        <h2>BARANG PINJAMAN</h2><br>
+        <p>BPSDMP KOMINFO MANADO</p>
+    </div>
+ 
+    <div class="form-container">
+         <form id="peminjamanForm">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" >
+
+            <label for="nama">NIP</label>
+            <input type="text" id="nip" name="nip" >
+
+            <label for="alamat">Alamat</label>
+            <textarea id="alamat" name="alamat" rows="3" ></textarea> <br>
+            <br>
+            
+            <h3>Data Barang yang Dipinjam</h3>
+
+            <label for="jenisBarang">Jenis Barang</label>
+            <input type="text" id="jenisBarang" name="jenisBarang" >
+
+            <label for="jumlahBarang">Jumlah Barang</label>
+            <div class="input-container">
+                <button type="button" class="btn-jumlah" onclick="ubahJumlah(-1)">−</button>
+                <input type="text" id="jumlahBarang" name="jumlahBarang" value="1" >
+                <button type="button" class="btn-jumlah" onclick="ubahJumlah(1)">+</button>
+            </div>
+
+            <label for="kodeBarang">Kode Barang</label>
+            <input type="text" id="kodeBarang" name="kodeBarang" >
+
+            <label for="kondisiBarang">Kondisi Barang</label>
+            <select id="kondisiBarang" name="kondisiBarang" >
+                <option value="Berfungsi Baik">Berfungsi Baik</option>
+                <option value="Rusak">Rusak</option>
+            </select>
+
+            <label for="kelengkapan">Kelengkapan</label>
+            <input type="text" id="kelengkapan" name="kelengkapan" ><br>
+            <br>
+
+            <h3>Status Peminjaman</h3>
+
+            <label for="statusPeminjaman">Dinas / Non Kedinasan</label>
+            <select id="statusPeminjaman" name="statusPeminjaman" >
+                <option value="dinas">Dinas</option>
+                <option value="nonDinas">Non Dinas</option>
+            </select>
+
+            <label for="tujuanPeminjaman">Tujuan Peminjaman</label>
+            <textarea id="tujuanPeminjaman" name="tujuanPeminjaman" rows="2" ></textarea>
+
+            <label for="tanggalPinjam">Tanggal Peminjaman</label>
+            <input type="date" id="tanggalPinjam" name="tanggalPinjam" >
+
+            <label for="tanggalKembali">Tanggal Pengembalian</label>
+            <input type="date" id="tanggalKembali" name="tanggalKembali" ><br>
+            <br>
+
+            <h3>Tanda Tangan</h3>
+
+            <canvas id="signature-pad" width="400" height="200"></canvas>
+            <button type="button" class="btn-clear" onclick="clearSignature()">Hapus Tanda Tangan</button>
+
+            <button type="submit" class="btn-kirim">Kirim</button>
+        </form>
+    </div>  
+
+    <div id="success-message" class="success-message">
+        <p>Terima kasih! Data Anda telah berhasil dikirim.</p>
+        <button onclick="closeAndReload()">Tutup</button>
+    </div>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
+
+
+
